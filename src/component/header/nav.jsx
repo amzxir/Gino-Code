@@ -1,9 +1,19 @@
+import styled from "styled-components";
+
+const Navbar = styled.nav({
+    padding:'15px',
+    position:'relative',
+    direction:'rtl',
+})
+
+
+
 const Nav = () => {
     return ( 
-        <>
-        loremsajd
-        </>
-     );
+        <Navbar>
+            
+        </Navbar>
+    );
 }
  
 export default Nav;
