@@ -1,7 +1,9 @@
+import Nav from "./component/header/nav";
+
 function App() {
   return (
     <div>
-      lorem
+      <Nav/>
     </div>
   );
 }
