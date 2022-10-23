@@ -22,10 +22,22 @@
   font-weight: bold; 
 }
 
-body {
-  font-family: 'IranSans', sans-serif !important;
+:root{
+  --dark:#1D2833;
+  --danger:#FF0F10;
+  --light:#F2F2F2;
+  --white:#ffffff;
+  --gold:#CDAC81;
+
+}
+
+html,body,#root{
   margin: 0;
   width: 100%;
+}
+
+body {
+  font-family: 'IranSans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
