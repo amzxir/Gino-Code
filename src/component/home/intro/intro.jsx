@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import IntroImg from './images/hero.svg'
+import BottomImg from "./svg/bottom-img";
 
 const Container = styled.div({
     position:'relative',
@@ -79,11 +80,13 @@ const introData = {
     title:'گروه طراحی سامانه آنلاین ژینو' ,
     description:'گروه ژینو فعال در زمینه طراحی و اجرای سامانه آنلاین تحت وب در حوزه‌ی مختلف فروشگاهی،آموزشی،اداری و ...' ,
     buttonName:'همین الان شروع کن'
-    }
+}
 
 const Intro = () => {
+
     return ( 
         <Container>
+            <BottomImg/>
             <div className="intro bgImages">
                 <div className="content">
                     <div>

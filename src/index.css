@@ -28,6 +28,7 @@
   --light:#F2F2F2;
   --white:#ffffff;
   --gold:#CDAC81;
+  --gray:#5A5A5A;
 
 }
 
@@ -38,8 +39,7 @@ html,body,#root{
 
 body {
   font-family: 'IranSans', sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 button{
@@ -63,15 +63,14 @@ a{
   url(./component/home/intro/images/bg-round.png),
   url(./component/home/intro/images/bg-round-2.png),
   url(./component/home/intro/images/bg-square.png),
-  url(./component/home/intro/images/bg-line.png),
-  url(./component/home/intro/images/bg-bottom-hero.png)
+  url(./component/home/intro/images/bg-line.png)
   ;
   background-repeat: no-repeat;
   background-position: 0px 40%,
   right 0 top 0,
   left 50% top 0,
   left 50% top 50%,
-  center bottom -1px;
+  center;
 }
 
 .btn{
@@ -88,4 +87,29 @@ a{
   font-size: 1rem;
   border-radius: 8px;
   transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.textGold{
+  color: var(--gold);
+}
+
+.contentAfter::after{
+  position: absolute;
+    content: "";
+    width: 90px;
+    height: 1px;
+    bottom: 5px;
+    right: 0;
+    background: var(--gold);
+}
+
+.contentAfter::before{
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 11px;
+  bottom: 0;
+  right: 0;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
 }

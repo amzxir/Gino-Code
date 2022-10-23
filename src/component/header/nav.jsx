@@ -88,6 +88,10 @@ const Navs = styled.nav({
     '&> div.collapse':{
         backgroundColor:'#fff',
 
+        '@media (min-width: 992px)': {
+            display:'none !important',
+        },
+
         '&> div.collapseContent':{
             textAlign:'center',
 
@@ -132,11 +136,11 @@ const Navs = styled.nav({
     },
 
     '& .textDanger':{
-        color:'#FF0F10',
+        color:'#FF0F10 !important',
     },
 
     '& .textDark':{
-        color:'#1D2833'
+        color:'#1D2833 !important'
     }
 
 })
@@ -157,19 +161,38 @@ const Nav = () => {
 
     const [active , setActive] = useState()
 
+    const [scroll , setScroll] = useState()
+
+    const [colorText , setColortext] = useState()
+
+    const handelScroll = () => {
+        
+        if (window.scrollY>30){
+            setScroll('#fff')
+            setColortext('#1D2833')
+        } else {
+            setScroll('transparent')
+            setColortext('#fff')
+        }
+    }
+
+    useEffect(()=> {
+        window.addEventListener('scroll', handelScroll)
+    },[])
+
     return ( 
         <Navs>        
-            <div className='navbar'>
+            <div className='navbar' style={{ backgroundColor: scroll }}>
                 <div className="itemNav">
                     <div className="logo">
                         <img src={Logo} alt="" />
-                        <h2>ژینوکد</h2>
+                        <h2 style={{ color:colorText }}>ژینوکد</h2>
                     </div>
                     <div className="linkPage">
                         <ul>
                             {navItem.map((i , index)=> {
                                 return(
-                                    <li key={index} onClick={()=> setActive(index)}><a className={active==index?'textDanger':'textWhite'} href={i.link}>{i.name}</a></li>
+                                    <li key={index} onClick={()=> setActive(index)}><a style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} href={i.link}>{i.name}</a></li>
                                 )
                             })}
                         </ul>
