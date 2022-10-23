@@ -2,18 +2,19 @@ import styled from 'styled-components'
 import Logo from './images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 const Navs = styled.nav({
     position:'fixed',
+    top:'0',
     width:'100%',
     right:'0',
     left:'0',
+    zIndex:'10000',
 
     '@media (max-width: 992px)': {
         position:'relative',
-        backgroundColor:'#fff'
     },
 
     '&> div.navbar':{
@@ -44,6 +45,9 @@ const Navs = styled.nav({
                     alignItems:'center',
                     marginBlockStart:'0',
                     marginBlockEnd:'0',
+                    '@media (min-width: 992px)': {
+                        color:'#fff'
+                    },
                 }
             },
         
@@ -86,7 +90,6 @@ const Navs = styled.nav({
 
         '&> div.collapseContent':{
             textAlign:'center',
-            borderTop:'1px solid #DDDDDD',
 
             '&> ul':{
 
@@ -103,7 +106,7 @@ const Navs = styled.nav({
     },
 
     '& .openCollapse':{
-        height:'fit-content',
+        height:'200px',
         transition:'800ms',
     },
 
@@ -130,6 +133,10 @@ const Navs = styled.nav({
 
     '& .textDanger':{
         color:'#FF0F10',
+    },
+
+    '& .textDark':{
+        color:'#1D2833'
     }
 
 })
@@ -174,13 +181,14 @@ const Nav = () => {
             </div>
             <div className={open?'collapse openCollapse': 'collapse CloseCollapse'}>
                 <div className='collapseContent' style={{ 
-                    marginTop:open?'0px' : '-300px',
-                    transition:open?'600ms':'600ms',   
+                    borderTop:open?'.7px solid #DDDDDD':'',
+                    marginLeft:'20px',
+                    marginRight:'20px'
                     }}>
-                    <ul>
+                    <ul style={{ display:open?'block' : 'none'}}>
                         {navItem.map((i , index)=>{
                             return(
-                                <li key={index} onClick={()=> setActive(index)}><a className={open && active===index?'show textDanger':'hidden textWhite'} href={i.link}>{i.name}</a></li>
+                                <li key={index} onClick={()=> setActive(index)}><a style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} href={i.link}>{i.name}</a></li>
                             )
                         })}
                     </ul>
