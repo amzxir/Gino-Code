@@ -5,6 +5,7 @@ import Intro from "./intro/intro";
 import Package from "./package/package";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Team from "./team/team";
 
 const Homes = styled.div({
     
@@ -18,6 +19,7 @@ const Home = () => {
             <AboutUs/>
             <Package/>
             <Comment/>
+            <Team/>
         </Homes>
     );
 }

@@ -78,10 +78,6 @@ const Comment = () => {
         autoplay: true,
         rtl:true,
         initialSlide: 0,
-        // customPaging: i => (
-
-        //     <div className="dote"></div>
-        // ),
         responsive: [
           {
             breakpoint: 1024,
