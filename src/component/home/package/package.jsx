@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Card from "./card";
+import { faGear , faServer , faShareAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Container = styled.div({
     padding:'0px 4rem 0px 4rem',
@@ -9,6 +14,7 @@ const Container = styled.div({
     },
 
     '&> div.content':{
+        marginBottom:'4rem',
 
         '& h1':{
             fontWeight:'700',
@@ -29,14 +35,78 @@ const dataContent = {
     description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'
 }
 
+const data = [
+    {id:1 , title:'پکیج طلایی' , icon:faGear ,  description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.' , discount:'30' , price:'350',features:
+    ['لورم ایپسوم' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی']},
+    {id:2 , title:'پکیج برنز' , icon:faServer ,  description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.' , discount:'30' , price:'190',features:
+    ['لورم ایپسوم' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی']},
+    {id:3 , title:'پکیج نقره' , icon:faShareAlt ,  description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.' , discount:'30' , price:'120',features:
+    ['لورم ایپسوم' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی']},
+
+]
+
 const Package = () => {
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        rtl: true,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+    };
+
     return ( 
         <Container>
             <div className="content">
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>
             </div>
-            
+
+            <Slider {...settings}>
+            {data.map((i , index)=>{
+                return(
+                    <div>
+                        <Card 
+                            key={index}
+                            icon={i.icon}
+                            title={i.title}
+                            des={i.description}
+                            discount={i.discount}
+                            price={i.price}
+                            features={i.features}
+                        />
+                    </div>
+                )
+            })}
+            </Slider>
         </Container>
     );
 }
