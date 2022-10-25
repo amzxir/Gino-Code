@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
+
 const CardProduct = styled.div({
 
     '&> div.row':{
@@ -99,7 +100,7 @@ const Card = (props) => {
     return ( 
         <CardProduct>
             <div className="row">
-                <div key={props.key} className="col">
+                <div className="col">
                     <div className="product">
                         <div className="itemCenter">
                             <div className="icon">

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Card from "./card";
 import { faGear , faServer , faShareAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -42,7 +40,6 @@ const data = [
     ['لورم ایپسوم' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی']},
     {id:3 , title:'پکیج نقره' , icon:faShareAlt ,  description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.' , discount:'30' , price:'120',features:
     ['لورم ایپسوم' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی' , 'لورم ایپسوم متن ساختگی']},
-
 ]
 
 const Package = () => {
@@ -68,8 +65,8 @@ const Package = () => {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -89,13 +86,11 @@ const Package = () => {
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>
             </div>
-
             <Slider {...settings}>
             {data.map((i , index)=>{
                 return(
-                    <div>
+                    <div key={index}>
                         <Card 
-                            key={index}
                             icon={i.icon}
                             title={i.title}
                             des={i.description}
