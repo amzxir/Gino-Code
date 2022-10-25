@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 import Slider from "react-slick";
+import './dots.css'
 
 const Card = styled.div({
 
@@ -77,9 +78,10 @@ const Comment = () => {
         autoplay: true,
         rtl:true,
         initialSlide: 0,
-        customPaging: i => (
-            <div className="dote"></div>
-        ),
+        // customPaging: i => (
+
+        //     <div className="dote"></div>
+        // ),
         responsive: [
           {
             breakpoint: 1024,
