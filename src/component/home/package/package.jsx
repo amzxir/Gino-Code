@@ -36,6 +36,7 @@ const Package = () => {
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>
             </div>
+            
         </Container>
     );
 }
