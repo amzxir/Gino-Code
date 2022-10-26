@@ -27,6 +27,7 @@ const Contacts = styled.div({
     },
 
     '&> div.row':{
+  
         '@media (min-width: 992px)': {
             display:'flex',
             justifyContent:'space-evenly',
