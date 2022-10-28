@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Svg = styled.svg({
     position:'absolute',
-    bottom:'0',
+    bottom:'-1px',
     width:'100%'
 })
 

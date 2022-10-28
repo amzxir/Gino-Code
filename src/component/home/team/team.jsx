@@ -8,7 +8,7 @@ import { faInstagram , faTwitter , faLinkedinIn } from '@fortawesome/free-brands
 
 
 const Teams = styled.div({
-    padding:'0px 4rem 0px 4rem',
+    padding:'0px 8rem 0px 8rem',
     marginBottom:'4rem',
 
     '@media (max-width: 375px)': {
