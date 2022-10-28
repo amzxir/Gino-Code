@@ -3,12 +3,15 @@ import styled from "styled-components";
 import Footer from "./component/footer/footer";
 import Nav from "./component/header/nav";
 import Home from "./component/home/home";
+import Loading from "./component/loading/loading";
 
 const Garden = styled.div({
   direction:'rtl',
 })
 
-function App() {
+
+function App() {  
+
   return (
     <Garden>
       <Nav/>
