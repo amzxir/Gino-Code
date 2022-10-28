@@ -5,6 +5,8 @@ import images2 from './images/team-2.jpeg'
 import images3 from './images/team-3.jpeg'
 import images4 from './images/team-4.jpeg'
 import { faInstagram , faTwitter , faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { useContext } from "react";
+import Context from "../../../context/context";
 
 
 const Teams = styled.div({
@@ -77,8 +79,13 @@ const data = [
 ]
 
 const Team = () => {
+
+    const {navItem} = useContext(Context)
+
+    const link = navItem[3].link
+
     return ( 
-        <Teams>
+        <Teams id={link}>
             <div className="content">
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.des}</p>

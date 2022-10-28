@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import Card from "./card";
 import { faGear , faServer , faShareAlt } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from "react";
+import Context from "../../../context/context";
 
 const Container = styled.div({
     padding:'0px 4rem 0px 4rem',
@@ -80,8 +82,12 @@ const Package = () => {
         ]
     };
 
+    const {navItem} = useContext(Context)
+
+    const link = navItem[2].link
+
     return ( 
-        <Container>
+        <Container id={link}>
             <div className="content">
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>

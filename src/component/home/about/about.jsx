@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import Context from "../../../context/context";
 import images from './images/about.svg'
 
 const Container = styled.div({
@@ -62,8 +64,13 @@ const data = {
 }
 
 const AboutUs = () => {
+
+    const {navItem} = useContext(Context)
+
+    const link = navItem[1].link
+
     return ( 
-        <Container>
+        <Container id={link}>
             <div className="row">
                 <div className="content">
                     <h1 className="contentAfter">به <span className="textGold">ژینوکد</span> خوش آمدید</h1>

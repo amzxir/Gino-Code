@@ -43,7 +43,7 @@ html,body,#root{
 
 body {
   font-family: 'IranSans', sans-serif !important;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 ::placeholder{

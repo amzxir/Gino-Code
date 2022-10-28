@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import Logo from './images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Context from '../../context/context'
 
 
 const Navs = styled.nav({
@@ -146,16 +147,18 @@ const Navs = styled.nav({
 })
 
 
-const navItem = [
-    {id:1 , name:'خانه' , link:'#'},
-    {id:1 , name:'درباره ما' , link:'#'},
-    {id:1 , name:'پکیج‌ ها' , link:'#'},
-    {id:1 , name:'تیم ما' , link:'#'},
-    {id:1 , name:'تماس با ما' , link:'#'},
-]
+// const navItem = [
+//     {id:1 , name:'خانه' , link:'home'},
+//     {id:1 , name:'درباره ما' , link:'about-us'},
+//     {id:1 , name:'پکیج‌ ها' , link:'package'},
+//     {id:1 , name:'تیم ما' , link:'team'},
+//     {id:1 , name:'تماس با ما' , link:'contact-us'},
+// ]
 
 
 const Nav = () => {
+
+    const {navItem} = useContext(Context);
 
     const [open , setOpen] = useState(false)
 
@@ -192,7 +195,7 @@ const Nav = () => {
                         <ul>
                             {navItem.map((i , index)=> {
                                 return(
-                                    <li key={index} onClick={()=> setActive(index)}><a style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} href={i.link}>{i.name}</a></li>
+                                    <li key={index} onClick={()=> setActive(index)}><a style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} href={`#${i.link}`}>{i.name}</a></li>
                                 )
                             })}
                         </ul>
@@ -211,7 +214,7 @@ const Nav = () => {
                     <ul style={{ display:open?'block' : 'none'}}>
                         {navItem.map((i , index)=>{
                             return(
-                                <li key={index} onClick={()=> setActive(index)}><a style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} href={i.link}>{i.name}</a></li>
+                                <li key={index} onClick={()=> setActive(index)}><a style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} href={`#${i.link}`}>{i.name}</a></li>
                             )
                         })}
                     </ul>

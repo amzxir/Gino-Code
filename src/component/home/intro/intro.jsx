@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import Context from "../../../context/context";
 import IntroImg from './images/hero.svg'
 import BottomImg from "./svg/bottom-img";
 
@@ -84,8 +86,12 @@ const introData = {
 
 const Intro = () => {
 
+    const {navItem} = useContext(Context)
+
+    const link = navItem[0].link
+
     return ( 
-        <Container>
+        <Container id={link}>
             <BottomImg/>
             <div className="intro bgImages">
                 <div className="content">

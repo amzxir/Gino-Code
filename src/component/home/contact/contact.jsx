@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import Context from "../../../context/context";
 import Form from "./form";
 import Relationship from "./relationship";
 
@@ -42,8 +44,13 @@ const dataContent = {
 }
 
 const Contact = () => {
+
+    const {navItem} = useContext(Context)
+    
+    const link = navItem[4].link
+
     return ( 
-        <Contacts>
+        <Contacts id={link}>
             <div className="content">
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>
