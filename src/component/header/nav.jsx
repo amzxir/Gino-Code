@@ -147,22 +147,11 @@ const Navs = styled.nav({
 })
 
 
-// const navItem = [
-//     {id:1 , name:'خانه' , link:'home'},
-//     {id:1 , name:'درباره ما' , link:'about-us'},
-//     {id:1 , name:'پکیج‌ ها' , link:'package'},
-//     {id:1 , name:'تیم ما' , link:'team'},
-//     {id:1 , name:'تماس با ما' , link:'contact-us'},
-// ]
-
-
 const Nav = () => {
 
-    const {navItem} = useContext(Context);
+    const {navItem , setActive , active} = useContext(Context);
 
     const [open , setOpen] = useState(false)
-
-    const [active , setActive] = useState()
 
     const [scroll , setScroll] = useState()
 

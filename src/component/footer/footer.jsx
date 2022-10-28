@@ -4,6 +4,8 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faMapMarked , faPhoneAlt , faSquareEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram , faTwitter , faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Form from "./form";
+import { useContext } from "react";
+import Context from "../../context/context";
 
 
 const Container = styled.footer({
@@ -115,14 +117,6 @@ const Container = styled.footer({
 
 })
 
-const item = [
-    {name:'خانه' , link:'#'},
-    {name:'درباره ما' , link:'#'},
-    {name:'پکیج ها' , link:'#'},
-    {name:'تیم ما' , link:'#'},
-    {name:'تماس با ما' , link:'#'},
-]
-
 const relationship = [
     {content:' البرز ، جهانشهر' , icon:faMapMarked , link:'#'},
     {content:'0937 902 6444 - 02691010046 - 02691010047 - 02691010048 ' , icon:faPhoneAlt , link:'#'},
@@ -140,6 +134,9 @@ const media = [
 
 
 const Footer = () => {
+
+    const {navItem , active , setActive} = useContext(Context) 
+
     return ( 
         <Container>
             <div className="imagesFooter">
@@ -147,10 +144,10 @@ const Footer = () => {
                 <div className="row">
                     <div className="col6 col2">
                         <ul>
-                            {item.map((i , index)=> {
+                            {navItem.map((i , index)=> {
                                 return(
 
-                                    <li key={index}><a href="#"><FontAwesomeIcon fontSize={14} icon={faChevronRight} /> {i.name}</a></li>
+                                    <li key={index} onClick={()=> setActive(index)} ><a href={`#${i.link}`}><FontAwesomeIcon fontSize={14} icon={faChevronRight} /> {i.name}</a></li>
                                 )
                             })}
                         </ul>

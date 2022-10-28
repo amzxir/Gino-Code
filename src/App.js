@@ -23,6 +23,9 @@ function App() {
 
   const [isLoading , setIsLoading] = useState(undefined);
 
+  const [active , setActive] = useState()
+
+
   useEffect(()=> {
     setIsLoading(true)
   }, [])
@@ -30,6 +33,8 @@ function App() {
   return (
     <Context.Provider value={{ 
         navItem,
+        active,
+        setActive,
       }}>
       {!isLoading ? <Loading/> : 
         <Garden>
