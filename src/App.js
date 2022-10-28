@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Footer from "./component/footer/footer";
 import Nav from "./component/header/nav";
 import Home from "./component/home/home";
 
@@ -11,6 +12,7 @@ function App() {
     <Garden>
       <Nav/>
       <Home/>
+      <Footer/>
     </Garden>
   );
 }

@@ -16,7 +16,7 @@ const Forms = styled.div({
             justifyContent:'space-between',
             flexWrap:'wrap',
             '&> div.formGroup':{
-
+                
                 '& input':{
     
                 }
@@ -27,10 +27,8 @@ const Forms = styled.div({
 
     '& .col6':{
         flex:'0 0 auto',
-        width:'45%',
+        width:'48%',
         marginBottom:'1rem',
-
-
     },
 
     '& .col12':{
