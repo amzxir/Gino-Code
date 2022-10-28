@@ -1,10 +1,11 @@
+import { useEffect , useState } from "react";
 import styled from "styled-components";
 import Footer from "./component/footer/footer";
 import Nav from "./component/header/nav";
 import Home from "./component/home/home";
 
 const Garden = styled.div({
-direction:'rtl',
+  direction:'rtl',
 })
 
 function App() {
