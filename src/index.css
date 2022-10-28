@@ -171,3 +171,29 @@ a{
   --bd-pink-rgb: 214,51,132;
   background: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%),radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
 }
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+width: 50px;
+height: 50px;
+border: 10px solid #f3f3f3;
+border-top: 10px solid var(--gold);
+border-radius: 50%;
+animation: spinner 1.5s linear infinite;
+}
+
+.spinner-container {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}

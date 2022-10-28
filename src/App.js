@@ -5,6 +5,7 @@ import Nav from "./component/header/nav";
 import Home from "./component/home/home";
 import Loading from "./component/loading/loading";
 
+
 const Garden = styled.div({
   direction:'rtl',
 })
@@ -12,12 +13,22 @@ const Garden = styled.div({
 
 function App() {  
 
+  const [isLoading , setIsLoading] = useState(undefined);
+
+  useEffect(()=> {
+    setIsLoading(true)
+  }, [])
+
   return (
-    <Garden>
-      <Nav/>
-      <Home/>
-      <Footer/>
-    </Garden>
+    <>
+      {!isLoading ? <Loading/> : 
+        <Garden>
+          <Nav/>
+          <Home/>
+          <Footer/>
+        </Garden>
+      }
+    </>
   );
 }
 

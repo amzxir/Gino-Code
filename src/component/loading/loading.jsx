@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import './loading.css'
 
 const Container = styled.div({
 
