@@ -61,7 +61,7 @@ const CardProduct = styled.div({
                     },
 
                     '& p':{
-                        fontWeight:'bold',
+                        fontWeight:'500',
                         fontSize:'24px',
                         marginBlockEnd:'10px',
                         marginBlockStart:'10px',
@@ -113,7 +113,7 @@ const Card = (props) => {
                         </div>
                         <div className="price">
                             <small>تخفیف - {props.discount}%</small>
-                            <p>{props.price} تومان</p>
+                            <p><span className="vazir">{props.price}</span> تومان</p>
                             <a className="btn">الان بخرید</a>
                         </div>
                         <div className="feature">

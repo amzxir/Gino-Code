@@ -69,7 +69,8 @@ const Container = styled.footer({
 
                     '& a':{
                         color:'#fff',
-                        fontSize:'14px',
+                        fontSize:'15px',
+                        fontWeight:'bold',
                     }
                 },
 
@@ -156,7 +157,7 @@ const Footer = () => {
                         <p>در تماس باشید</p>
                         {relationship.map((i , index)=> {
                             return(
-                                <div key={index}><a className="content" href={i.link}><FontAwesomeIcon color="#CDAC81" icon={i.icon}/> {i.content}</a></div>
+                                <div key={index}><a className="content vazir" href={i.link}><FontAwesomeIcon color="#CDAC81" icon={i.icon}/> {i.content}</a></div>
                             )
                         })}
                     </div>

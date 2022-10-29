@@ -15,8 +15,8 @@ const Container = styled.div({
         marginBottom:'1rem',
 
         '&> a.content':{
-            fontSize:'14px',
-            fontWeight:'500',
+            fontSize:'15px',
+            fontWeight:'bold',
             color:'#5A5A5A',
         }
     }
@@ -34,7 +34,7 @@ const Relationship = () => {
         <Container>
             {data.map((i , index)=> {
                 return(
-                    <div key={index}><a className="content" href={i.link}><FontAwesomeIcon color="#CDAC81" icon={i.icon}/> {i.content}</a></div>
+                    <div key={index}><a className="content vazir" href={i.link}><FontAwesomeIcon color="#CDAC81" icon={i.icon}/> {i.content}</a></div>
                 )
             })}
 

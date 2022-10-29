@@ -1,4 +1,7 @@
 
+@import url('https://gitcdn.ir/library/PersianFonts/vazir/style.css');
+
+
 @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb.woff") format("woff");
@@ -201,4 +204,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
+}
+
+.vazir{
+  font-family: vazir;
 }
