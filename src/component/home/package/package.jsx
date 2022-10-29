@@ -84,11 +84,11 @@ const Package = () => {
 
     const {navItem} = useContext(Context)
 
-    const link = navItem[2].link
+    const link = navItem[2].link 
 
     return ( 
-        <Container id={link}>
-            <div className="content">
+        <Container>
+            <div className="content" id={link}>
                 <h1 className="contentAfter">{dataContent.title}</h1>
                 <p>{dataContent.description}</p>
             </div>

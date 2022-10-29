@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Team from "./team/team";
 import Contact from "./contact/contact";
+import BtnTop from "../btnfixed/btntop";
+import WhatsApp from "../btnfixed/whatsapp";
 
 const Homes = styled.div({
     
@@ -22,6 +24,8 @@ const Home = () => {
             <Comment/>
             <Team/>
             <Contact/>
+            <BtnTop/>
+            <WhatsApp/>
         </Homes>
     );
 }

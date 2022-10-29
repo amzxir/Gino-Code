@@ -39,11 +39,12 @@
 html,body,#root{
   margin: 0;
   width: 100%;
+  scroll-behavior: smooth !important;
+
 }
 
 body {
   font-family: 'IranSans', sans-serif !important;
-  scroll-behavior: smooth !important;
 }
 
 ::placeholder{

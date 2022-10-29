@@ -13,6 +13,7 @@ const Navs = styled.nav({
     right:'0',
     left:'0',
     zIndex:'10000',
+    boxShadow:'0 0.125rem 0.25rem rgb(0 0 0 / 12%)',
 
     '@media (max-width: 992px)': {
         position:'relative',

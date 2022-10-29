@@ -8,7 +8,7 @@ const Container = styled.div({
     position:'relative',
     marginBottom:'4rem',
     '@media (max-width: 992px)': {
-        zIndex:'100000'
+        zIndex:'100000000'
     },
     '&> div.intro':{
         backgroundColor:'#1D2833',
