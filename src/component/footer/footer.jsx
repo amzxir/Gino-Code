@@ -28,7 +28,7 @@ const Container = styled.footer({
                 display:'flex',
                 justifyContent:'space-between',
                 flexWrap:'wrap',
-                marginTop:'8rem',
+                marginTop:'6rem',
                 alignItems:'center'
             },
 
