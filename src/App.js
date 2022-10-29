@@ -5,6 +5,8 @@ import Nav from "./component/header/nav";
 import Home from "./component/home/home";
 import Loading from "./component/loading/loading";
 import Context from "./context/context";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Garden = styled.div({

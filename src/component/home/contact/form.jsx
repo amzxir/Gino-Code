@@ -1,4 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Forms = styled.div({
     marginBottom:'3rem',
@@ -18,7 +21,7 @@ const Forms = styled.div({
             '&> div.formGroup':{
                 
                 '& input':{
-    
+
                 }
             }
         },
@@ -49,28 +52,91 @@ const Forms = styled.div({
 })
 
 const Form = () => {
+
+    const [input , setInput] = useState({})
+
+    const [error , setError] = useState({})
+    
+    const handelChange = (e) => {
+        const {name , value} = e.target
+        setInput({...input , [name]: value})
+
+    }
+
+    const handelSubmit = (e) => {
+        e.preventDefault()
+        setError(validate(input))
+        console.log(input)
+
+    }
+
+    const validate = (v) => {
+        
+        if (!v.name) {
+
+            toast.error('فیلد نام و نام خانوادگی خالی است !');
+
+        } else if (!v.email) {
+
+            toast.error('فیلد ایمیل خالی است !');
+
+        } else if (!v.subject) {
+
+            toast.error('فیلد موضوع خالی است !');
+
+        } else if (!v.message) {
+
+            toast.error('فیلد پیام خالی است !');
+
+        } else {
+            toast.success('پیام با موفقیت ارسال شد');
+        }
+    }
+
+    const returnIsvalidated=(field,value)=>{
+        switch (field) {
+                case 'email':
+                return value?.includes('@')?true:false
+                break;
+            
+                case 'name':
+                return value?true:false
+                break;
+
+                case 'subject':
+                return value?true:false
+                break;
+
+                case 'message':
+                return value?true:false
+                break;
+        }
+            return true 
+    }
+
     return ( 
         <Forms>
-            <form>
+            <form onSubmit={handelSubmit}>
                 <div className="row">
                     <div className="col6">
                         <div className="formGroup">
-                            <input type="text" className="formControl" placeholder="نام و نام خانوادگی" />
+                            <input type="text" style={{ 
+                                borderColor:returnIsvalidated('name' , input.name)?'#379237' :'#ced4da'}} className="formControl" name="name" value={input.name || ''} onChange={handelChange} placeholder="نام و نام خانوادگی" />
                         </div>
                     </div>
                     <div className="col6">
                         <div className="formGroup">
-                            <input type="text" className="formControl" placeholder="ایمیل" />
+                            <input type="text" style={{ borderColor:returnIsvalidated('email' , input.email)?'#379237' :'#ced4da' }} className="formControl" name="email" value={input.email || ''} onChange={handelChange} placeholder="ایمیل" />
                         </div>
                     </div>
                     <div className="col12">
                         <div className="formGroup">
-                            <input type="text" className="formControl" placeholder="موضوع"/>
+                            <input type="text" style={{ borderColor:returnIsvalidated('subject' , input.subject)?'#379237' :'#ced4da' }} className="formControl" name="subject" value={input.subject || ''} onChange={handelChange} placeholder="موضوع"/>
                         </div>
                     </div>
                     <div className="col12">
                         <div className="formGroup">
-                            <textarea className="formControl" rows="5" placeholder="پیام"></textarea>
+                            <textarea className="formControl" style={{ borderColor:returnIsvalidated('message' , input.message)?'#379237' :'#ced4da' }} rows="5" name="message" value={input.message || ''} onChange={handelChange}  placeholder="پیام"></textarea>
                         </div>
                     </div>
                     <div className="col12">
@@ -78,6 +144,11 @@ const Form = () => {
                     </div>
                 </div>
             </form>
+            <ToastContainer
+                rtl={true}
+                theme="dark"
+                style={{ zIndex:'10000000' }}
+            />
         </Forms>
     );
 }

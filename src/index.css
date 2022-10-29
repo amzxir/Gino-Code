@@ -51,6 +51,10 @@ body {
   font-size: 14px;
 }
 
+input , textarea {
+  font-family: 'IranSans', sans-serif !important;
+}
+
 button{
   font-family: 'IranSans', sans-serif !important;
 }
