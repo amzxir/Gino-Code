@@ -6,6 +6,9 @@ import Home from "./component/home/home";
 import Loading from "./component/loading/loading";
 import Context from "./context/context";
 import 'react-toastify/dist/ReactToastify.css';
+import SingleProduct from "./component/single-product/single";
+import {Route , Routes } from "react-router-dom";
+
 
 
 
@@ -16,7 +19,7 @@ const Garden = styled.div({
 const navItem = [
   {id:1 , name:'خانه' , link:'home'},
   {id:1 , name:'درباره ما' , link:'about-us'},
-  {id:1 , name:'پکیج‌ ها' , link:'package'},
+  {id:1 , name:'محصولات' , link:'product'},
   {id:1 , name:'تیم ما' , link:'team'},
   {id:1 , name:'تماس با ما' , link:'contact-us'},
 ]
@@ -41,7 +44,10 @@ function App() {
       {!isLoading ? <Loading/> : 
         <Garden>
           <Nav/>
-          <Home/>
+          <Routes>
+            <Route  path="/" element={<Home />} />
+            <Route  path="/single-product" element={<SingleProduct />} />
+          </Routes>
           <Footer/>
         </Garden>
       }

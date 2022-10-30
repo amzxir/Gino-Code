@@ -52,7 +52,7 @@ const Container = styled.div({
                     fontWeight:'500'
                 },
     
-                '& button.btn':{
+                '& a.btn':{
                     color:'#fff',
                     fontWeight:'600',
                     backgroundColor:'#FF0F10',
@@ -81,7 +81,7 @@ const Container = styled.div({
 const introData = {
     title:'گروه طراحی سامانه آنلاین ژینو' ,
     description:'گروه ژینو فعال در زمینه طراحی و اجرای سامانه آنلاین تحت وب در حوزه‌ی مختلف فروشگاهی،آموزشی،اداری و ...' ,
-    buttonName:'همین الان شروع کن'
+    buttonName:'اتوماسیون اداری'
 }
 
 const Intro = () => {
@@ -89,6 +89,9 @@ const Intro = () => {
     const {navItem} = useContext(Context)
 
     const link = navItem[0].link
+
+    const links = {linkTwo:'product'}
+
 
     return ( 
         <Container id={link}>
@@ -98,7 +101,7 @@ const Intro = () => {
                     <div>
                         <h1>{introData.title}</h1>
                         <p>{introData.description}</p>
-                        <button className="btn">{introData.buttonName}</button>
+                        <a href={`#${links.linkTwo}`} className="btn">{introData.buttonName}</a>
                     </div>
                     <div className="imgCenter">
                         <img src={IntroImg} alt="" />

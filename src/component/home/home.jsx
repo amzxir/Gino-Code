@@ -23,7 +23,7 @@ const Home = () => {
             <AboutUs/>
             {/* <Package/> */}
             <Product/>
-            <Comment/>
+            {/* <Comment/> */}
             <Team/>
             <Contact/>
             <BtnTop/>

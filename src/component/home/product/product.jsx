@@ -3,6 +3,10 @@ import SliderProduct from "./slider";
 import images1 from './images/img1.jpeg'
 import images2 from './images/img2.jpeg'
 import images3 from './images/img3.jpeg'
+import {NavLink} from "react-router-dom";
+import { useContext } from "react";
+import Context from "../../../context/context";
+
 
 const Container = styled.div({
     padding:'0px 4rem 0px 4rem',
@@ -60,14 +64,18 @@ const imgSlider = [
 
 const Product = () => {
 
-    const links = {linkOne:'#' , linkTwo:'contact-us'}
+    const links = {linkTwo:'contact-us'} 
+
+    const {navItem} = useContext(Context)
+
+    const link = navItem[2].link 
 
     return ( 
-        <Container>
+        <Container id={link}>
             <div className="content">
                 <h1 className="contentAfter">{content.name}</h1>
                 <div>
-                    <a href={links.linkOne} className="btnOne btn">امکانات</a>
+                    <NavLink to='/single-product' className="btnOne btn">امکانات</NavLink>
                     <a href={`#${links.linkTwo}`} className="btnTwo btn">مشاهده و مشاوره</a>
                 </div>
                 <p>{content.description}</p>
