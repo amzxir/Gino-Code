@@ -1,7 +1,7 @@
 .slick-dots li.slick-active button:before {
     background-color: var(--gold) !important;
     border-color: var(--gold);
-    width: 25px !important;
+    width: 18px !important;
     transition: .7s; 
     border-radius: 10px !important;
   }

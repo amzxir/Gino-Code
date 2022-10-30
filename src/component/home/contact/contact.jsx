@@ -50,6 +50,7 @@ const Contact = () => {
     
     const link = navItem[4].link
 
+
     return ( 
         <Contacts id={link}>
             <div className="content">
