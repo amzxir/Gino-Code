@@ -5,23 +5,27 @@
 @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb.woff") format("woff");
-
+  font-display: block;
   font-weight: normal; }
   @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb_UltraLight.woff") format("woff");
+  font-display: block;
   font-weight: 100; }
   @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb_Light.woff") format("woff");
+  font-display: block;
   font-weight: 300; }
   @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb_Medium.woff") format("woff");
+  font-display: block;
   font-weight: 500; }
   @font-face {
   font-family: 'IranSans';
   src: url("./font/IRANSansWeb_Bold.woff") format("woff");
+  font-display: block;
   font-weight: bold; 
 }
 
@@ -208,4 +212,5 @@ min-height: 100vh;
 
 .vazir{
   font-family: vazir;
+  font-display: block;
 }
