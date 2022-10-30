@@ -33,6 +33,7 @@ const Container = styled.div({
                 lineHeight:'1.2',
                 position:'relative',
                 paddingBottom:'30px',
+                textAlign:'center',
 
             },
 

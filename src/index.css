@@ -116,12 +116,15 @@ a{
 
 .contentAfter::after{
   position: absolute;
-    content: "";
-    width: 90px;
-    height: 1px;
-    bottom: 5px;
-    right: 0;
-    background: var(--gold);
+  content: "";
+  width: 90px;
+  height: 1px;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  background: var(--gold);
 }
 
 .contentAfter::before{
@@ -131,6 +134,9 @@ a{
   height: 11px;
   bottom: 0;
   right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
   border-top: 1px solid var(--gray);
   border-bottom: 1px solid var(--gray);
 }

@@ -14,6 +14,7 @@ const Contacts = styled.div({
 
     '&> div.content':{
         marginBottom:'4rem',
+        textAlign:'center',
 
         '& h1':{
             fontWeight:'700',

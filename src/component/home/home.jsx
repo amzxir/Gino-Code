@@ -9,6 +9,7 @@ import Team from "./team/team";
 import Contact from "./contact/contact";
 import BtnTop from "../btnfixed/btntop";
 import WhatsApp from "../btnfixed/whatsapp";
+import Product from "./product/product";
 
 const Homes = styled.div({
     
@@ -20,7 +21,8 @@ const Home = () => {
         <Homes>
             <Intro/>
             <AboutUs/>
-            <Package/>
+            {/* <Package/> */}
+            <Product/>
             <Comment/>
             <Team/>
             <Contact/>
