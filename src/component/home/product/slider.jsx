@@ -23,6 +23,10 @@ const SliderProduct = (props) => {
         autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        customPaging: function (i) {
+            return <div className="dot"></div>;
+          },
+          dotsClass: "slick-dots slick-thumb",
         rtl: true
     };
 
