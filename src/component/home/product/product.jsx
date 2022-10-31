@@ -76,7 +76,7 @@ const Product = () => {
                 <h1 className="contentAfter">{content.name}</h1>
                 <div>
                     <NavLink to='/single-product' className="btnOne btn">امکانات</NavLink>
-                    <a href={`#${links.linkTwo}`} className="btnTwo btn">مشاهده و مشاوره</a>
+                    <a href={`#${links.linkTwo}`} className="btnTwo btn">مشاهده - مشاوره</a>
                 </div>
                 <p>{content.description}</p>
             </div>

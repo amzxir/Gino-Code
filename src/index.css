@@ -141,6 +141,20 @@ a{
   border-bottom: 1px solid var(--gray);
 }
 
+.itemProduct::before{
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border-right: 1.2px solid var(--gold);
+  border-left: 1.2px solid var(--gold);
+}
+
 .formControl {
   display: block;
   width: 100%;
