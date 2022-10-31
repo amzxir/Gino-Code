@@ -8,6 +8,8 @@ import Context from "./context/context";
 import 'react-toastify/dist/ReactToastify.css';
 import SingleProduct from "./component/single-product/single";
 import {Route , Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+
 
 
 
@@ -51,6 +53,12 @@ function App() {
           <Footer/>
         </Garden>
       }
+
+      <ToastContainer
+          rtl={true}
+          theme="dark"
+          style={{ zIndex:'10000000' }}
+      />
     </Context.Provider>
   );
 }

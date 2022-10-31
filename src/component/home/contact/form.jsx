@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 const Forms = styled.div({
@@ -144,11 +144,6 @@ const Form = () => {
                     </div>
                 </div>
             </form>
-            <ToastContainer
-                rtl={true}
-                theme="dark"
-                style={{ zIndex:'10000000' }}
-            />
         </Forms>
     );
 }
