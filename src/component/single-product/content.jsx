@@ -59,6 +59,12 @@ const Container = styled.div({
         height:'auto',
     },
 
+    '& .imgDots':{
+        maxWidth:'150%',
+        position:'absolute',
+        height:'auto',
+    },
+
 
 })
 
@@ -69,7 +75,7 @@ const Content = () => {
         customPaging: function() {
             return (
                 <a>
-                    <img className="imgFluid" src={images1} />
+                    <img className="imgDots" src={images1} />
                 </a>
             );
         },
