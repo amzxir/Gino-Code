@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Content from "./content";
 import FormProduct from "./form";
+import images1 from './images/img1.jpeg'
+import images2 from './images/img2.jpeg'
+import images3 from './images/img3.jpeg'
 
 
 const Container = styled.div({
@@ -42,6 +45,40 @@ const Container = styled.div({
     }
 })
 
+const data = [
+    {
+        id:1 , 
+        name:'اتوماسیون اداری ژینو' , 
+        description:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته،',
+        feature:[
+            {name: 'امکانات' , item:[
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+            ]},
+
+            {name: 'ویژگی ها' , item:[
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+                'لورم ایپسوم',
+                'لورم ایپسوم متن',
+            ]},
+        ],
+
+    }
+]
+
+const slider = [
+    {img:images1},
+    {img:images2},
+    {img:images3},
+]
+
 const SingleProduct = () => {
     return ( 
         <Container>
@@ -51,7 +88,10 @@ const SingleProduct = () => {
                 <NavLink>مشاهده محصول</NavLink>
             </div>
             <div className="product">
-                <Content/>
+                <Content
+                imgSlider={slider}
+                data={data}
+                />
                 <FormProduct/>
             </div>
         </Container>
