@@ -59,7 +59,7 @@ body {
   font-size: 14px;
 }
 
-input , textarea {
+input , textarea , option , select {
   font-family: 'IranSans', sans-serif !important;
 }
 
@@ -248,3 +248,4 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+

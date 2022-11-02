@@ -7,6 +7,7 @@ import FormProduct from "./form";
 import images1 from './images/img1.jpeg'
 import images2 from './images/img2.jpeg'
 import images3 from './images/img3.jpeg'
+import Naving from "./naving";
 
 
 const Container = styled.div({
@@ -42,6 +43,17 @@ const Container = styled.div({
 
     '&> div.product':{
         padding:'0px 4rem 0px 4rem',
+
+        '@media (max-width: 550px)': {
+            padding:'0px 1rem 0px 1rem',
+        },
+
+        '&> div.row':{
+            display:'flex',
+            justifyContent:'space-between',
+            flexDirection:'row',
+            flexWrap:'wrap',
+        }
     }
 })
 
@@ -92,7 +104,10 @@ const SingleProduct = () => {
                 imgSlider={slider}
                 data={data}
                 />
-                <FormProduct/>
+                <div className="row">
+                    <Naving/>
+                    <FormProduct/>
+                </div>
             </div>
         </Container>
     );

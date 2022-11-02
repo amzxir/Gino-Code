@@ -18,9 +18,10 @@ const Container = styled.footer({
         '&> svg':{
             position:'absolute',
             top:'-1px',
-            width:'100%',
+            width:'95%',
             right:'0',
             left:'0',
+            zIndex:'1'
         },
 
         '&> div.row':{
@@ -78,6 +79,8 @@ const Container = styled.footer({
                     backgroundColor:'#F2F2F2',
                     padding:'1.5rem 3rem 1.5rem 3rem',
                     borderRadius:'10px',
+                    marginTop:'2rem',
+
 
                     '@media (max-width: 992px)': {
                         marginRight:'auto',

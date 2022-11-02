@@ -1,8 +1,10 @@
+import { useState } from "react";
+import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react";
+import { faCheckCircle  } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const Container = styled.div({
@@ -55,13 +57,16 @@ const Container = styled.div({
                 '&> div.button':{
                     margin:'1rem 0rem 1rem 0rem',
 
+                    '@media (max-width: 375px)': {
+                        display:'flex',
+                    },
+
                     '& button':{
-                        backgroundColor:'#fff',
-                        borderColor:'#D3D3D3',
-                        color:'#585858',
-                        fontSize:'12px',
+                        backgroundColor:'#FF0F10',
+                        borderColor:'#FF0F10',
+                        color:'#fff',
+                        fontSize:'17px',
                         fontWeight:'bold',
-                        borderRadius:'0 !important',
                         margin:'10px',
                         width:'100px',
 
@@ -71,9 +76,8 @@ const Container = styled.div({
                         backgroundColor:'#CDAC81',
                         borderColor:'#CDAC81',
                         color:'#fff',
-                        fontSize:'12px',
+                        fontSize:'17px',
                         fontWeight:'bold',
-                        borderRadius:'0 !important',
                         margin:'10px',
                         width:'100px',
 
@@ -118,6 +122,7 @@ const Container = styled.div({
                 '&> div.table':{
                     marginTop:'2rem',
                     overflow:'auto',
+                    paddingBottom:'.5rem',
                     whiteSpace:'nowrap',
                     '&> table':{
 
@@ -175,6 +180,11 @@ const Container = styled.div({
 
 })
 
+const alertDemo = () => {
+    toast.info('یپام شما برای مشاهده دمو به پشتیبانی ارسال شد');
+}
+
+
 const Content = (props) => {
 
     const settings = {
@@ -198,7 +208,6 @@ const Content = (props) => {
 
     const [view , setView] = useState(<Naving1/>)
 
-    const [active , setActive] = useState(false)
 
     return ( 
         <Container>
@@ -230,7 +239,7 @@ const Content = (props) => {
                             </div>
                             <div className="button">
                                 <button className="btn">خرید</button>
-                                <a className="btn">مشاوره</a>
+                                <a onClick={alertDemo} className="btn">مشاوره و دمو</a>
                             </div>
                         </div>
                         )
@@ -242,117 +251,123 @@ const Content = (props) => {
 }
 
 const Naving1 = () => {
+
+    const data = [
+        {name:'نامه نگاری' , info:[1 , null , 1 , null , null]},
+        {name:'کارتابل و گردش مکاتبات' , info:[null , 1 , 1 , null , null]},
+        {name:'دبیرخانه تحت وب' , info:[null , null , null , 1 , null]},
+        {name:'تبدیل گفتار به متن' , info:[null , 1 , null , null , 1]},
+        {name:'چت سازمانی' , info:[null , null , 1 , null , null]},
+    ]
+
     return(
         <table>
             <thead>
                 <tr>
-                    <td>لورم ایپسوم 1</td>
-                    <td>لورم ایپسوم 2</td>
-                    <td>لورم ایپسوم 3</td>
-                    <td>لورم ایپسوم 4</td>
-                    <td>لورم ایپسوم 5</td>
+                    {data.map((i , index)=> {
+                        return(
+                            <td key={index}>{i.name}</td>
+                        )
+                    })}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
+                {data.map((i , index)=> {
+                    return (
+                    <tr key={index}>
+
+                        {i.info.map((i , index)=> {
+                            return (
+                                
+                                <td key={index}>{i === 1 ? <FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/> : ''}</td>
+                            )
+                        })}
+ 
+                    </tr>
+                    )
+                })}
             </tbody>
         </table>
     )
 }
 
 const Naving2 = () => {
+
+    const data = [
+        {name:'مکاتبات دارای طبقه‌بندی' , info:[null , 1 , null , null , null]},
+        {name:'پایشگر و هشدار' , info:[null , null , null , 1 , null]},
+        {name:'دبیرخانه تحت وب' , info:[null , null , null , 1 , null]},
+        {name:'سرویس اطلاع رسانی' , info:[null , 1 , null , null , null]},
+        {name:'چت سازمانی' , info:[null , null , 1 , null , null]},
+    ]
+
     return(
         <table>
             <thead>
                 <tr>
-                    <td>لورم ایپسوم 1</td>
-                    <td>لورم ایپسوم 2</td>
-                    <td>لورم ایپسوم 3</td>
-                    <td>لورم ایپسوم 4</td>
-                    <td>لورم ایپسوم 5</td>
+                    {data.map((i , index)=> {
+                        return(
+                            <td key={index}>{i.name}</td>
+                        )
+                    })}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
+                {data.map((i , index)=> {
+                    return (
+                    <tr key={index}>
+
+                        {i.info.map((i , index)=> {
+                            return (
+                                
+                                <td key={index}>{i === 1 ? <FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/> : ''}</td>
+                            )
+                        })}
+
+                    </tr>
+                    )
+                })}
             </tbody>
         </table>
     )
 }
 
 const Naving3 = () => {
+
+    const data = [
+        {name:'فرم ساز و مدیریت فرآیندها' , info:[1 , null , null , null , null]},
+        {name:'فرم ساز فراگستر' , info:[null , 1 , null , null , null]},
+        {name:'ارتباط با شبکه‌های اجتماعی' , info:[null , null , null , 1 , null]},
+        {name:'مدیریت مستندات' , info:[null , null , null , null , 1]},
+        {name:'چت سازمانی' , info:[null , null , 1 , null , null]},
+    ]
+
     return(
         <table>
             <thead>
                 <tr>
-                    <td>لورم ایپسوم 1</td>
-                    <td>لورم ایپسوم 2</td>
-                    <td>لورم ایپسوم 3</td>
-                    <td>لورم ایپسوم 4</td>
-                    <td>لورم ایپسوم 5</td>
+                    {data.map((i , index)=> {
+                        return(
+                            <td key={index}>{i.name}</td>
+                        )
+                    })}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                    <td><FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/></td>
-                </tr>
+                {data.map((i , index)=> {
+                    return (
+                    <tr key={index}>
+
+                        {i.info.map((i , index)=> {
+                            return (
+                                
+                                <td key={index}>{i === 1 ? <FontAwesomeIcon color="#54B435" fontSize={18} icon={faCheckCircle}/> : ''}</td>
+                            )
+                        })}
+
+                    </tr>
+                    )
+                })}
             </tbody>
         </table>
     )

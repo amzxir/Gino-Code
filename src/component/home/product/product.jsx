@@ -12,6 +12,10 @@ const Container = styled.div({
     padding:'0px 4rem 0px 4rem',
     marginBottom:'4rem',
 
+    '@media (max-width: 375px)': {
+        padding:'0px 1rem 0px 1rem',
+    },
+
     '&> div.content':{
         marginBottom:'4rem',
         textAlign:'center',

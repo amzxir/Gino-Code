@@ -8,7 +8,7 @@ const Container = styled.div({
     marginBottom:'4rem',
 
     '@media (max-width: 375px)': {
-        padding:'0px 1.3rem 0px 1.3rem',
+        padding:'0px 1rem 0px 1rem',
     },
     
     '&> div.row':{
