@@ -15,6 +15,7 @@ const Container = styled.div({
 
     '&> div.nav':{
         borderBottom:'1px solid #e2e2e2',
+
         '& a':{
             display:'inline-block',
             margin:'10px',
@@ -39,6 +40,7 @@ const Container = styled.div({
         },
 
         '&> div.row':{
+            borderBottom:'2px dashed #e2e2e2',
             display:'flex',
             justifyContent:'space-between',
             flexDirection:'row',
@@ -47,11 +49,17 @@ const Container = styled.div({
             '&> div.col4':{
                 flex:'0 0 auto',
                 width:'30%',
+                fontSize:'15px',
+                fontWeight:'bold',
+                color:'#81858b',
             },
 
             '&> div.col8':{
                 flex:'0 0 auto',
                 width:'70%',
+                fontSize:'14px',
+                fontWeight:'500',
+                color:'#81858b',
             }
         },
 
@@ -106,20 +114,32 @@ const Tab1 = () => {
 }
 
 const Tab2 = () => {
+
+    const data = [
+        {name:'پکیچ برنز' , info:['کارتابل و گردش مکاتبات' , 'دبیرخانه تحت وب' , 'تبدیل گفتار به متن' , 'چت سازمانی']},
+        {name:'پکیچ نقره ای' , info:['مکاتبات دارای طبقه‌بندی' , 'پایشگر و هشدار' , 'دبیرخانه تحت وب' , 'سرویس اطلاع رسانی' , 'چت سازمانی ']},
+        {name:'پکیچ طلایی' , info:['کارتابل و گردش مکاتبات' , 'دبیرخانه تحت وب' , 'تبدیل گفتار به متن' , 'چت سازمانی']},
+    ]
+
     return(
         <>
-        <div className="row">
-            <div className="col4">
-                <p>مشخصات</p>
+        {data.map((i , index)=> {
+            return(
+                <div key={index} className="row">
+                    <div className="col4">
+                        <p>{i.name}</p>
+                    </div>
+                    <div className="col8">
+                        {i.info.map((i , index)=> {
+                            return(
+                                <p key={index}>{i}</p>
+                            )
+                        })}
+                    </div>
             </div>
-            <div className="col8">
-                <p>ابعاد : ۱۶۰.۸x۷۸.۱x۷.۷</p>
-                <p>ابعاد : ۱۶۰.۸x۷۸.۱x۷.۷</p>
-                <p>ابعاد : ۱۶۰.۸x۷۸.۱x۷.۷</p>
-                <p>ابعاد : ۱۶۰.۸x۷۸.۱x۷.۷</p>
-                <p>ابعاد : ۱۶۰.۸x۷۸.۱x۷.۷</p>
-            </div>
-        </div>
+            )
+        })}
+
         </>
     )
 }

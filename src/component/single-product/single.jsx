@@ -8,6 +8,8 @@ import images1 from './images/img1.jpeg'
 import images2 from './images/img2.jpeg'
 import images3 from './images/img3.jpeg'
 import Naving from "./naving";
+import { useEffect } from "react";
+
 
 
 const Container = styled.div({
@@ -92,6 +94,11 @@ const slider = [
 ]
 
 const SingleProduct = () => {
+
+    useEffect(()=> {
+        window.scroll({top:0 , left:0 , behavior: 'smooth'})
+    })
+
     return ( 
         <Container>
             <div className="breadcrumb bgImages">

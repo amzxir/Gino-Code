@@ -96,19 +96,19 @@ const Container = styled.div({
                     overflow:'auto',
                     whiteSpace:'nowrap',
                     borderBottom:'1.5px solid #dddddd',
-                    borderRight:'1.5px solid #dddddd',
+                    // borderRight:'1.5px solid #dddddd',
 
                     '& a':{
-                        backgroundColor:'#fff',
-                        borderColor:'#dddddd',
-                        borderWidth:'1.5px',
-                        borderRight:'none',
-                        borderBottom:'none',
-                        color:'#585858',
+                        // backgroundColor:'#fff',
+                        // borderColor:'#dddddd',
+                        // borderWidth:'1.5px',
+                        // borderRight:'none',
+                        // borderBottom:'none',
+                        color:'#81858b',
                         fontSize:'12px',
                         fontWeight:'bold',
                         borderRadius:'0px !important',
-                        width:'100px',
+                        width:'50px',
                         padding:'1rem',
 
                         '&:hover': {

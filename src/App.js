@@ -10,10 +10,6 @@ import SingleProduct from "./component/single-product/single";
 import {Route , Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 
-
-
-
-
 const Garden = styled.div({
   direction:'rtl',
 })
@@ -32,6 +28,9 @@ function App() {
 
   const [active , setActive] = useState()
 
+  useEffect(()=> {
+    window.scroll({top:0 , left:0 , behavior: 'smooth'})
+  })
 
   useEffect(()=> {
     setIsLoading(true)
