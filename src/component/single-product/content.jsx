@@ -104,7 +104,7 @@ const Container = styled.div({
                         // borderWidth:'1.5px',
                         // borderRight:'none',
                         // borderBottom:'none',
-                        color:'#81858b',
+                        color:'#383838',
                         fontSize:'12px',
                         fontWeight:'bold',
                         borderRadius:'0px !important',
