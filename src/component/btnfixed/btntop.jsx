@@ -13,12 +13,18 @@ const Button = styled.a({
     borderRadius:'50%',
     display:'flex',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    cursor:'pointer',
 })
 
 const BtnTop = () => {
+
+    const scrollTop = () => {
+        window.scroll({top:0 , left:0 , behavior: 'smooth'})
+    }
+
     return ( 
-        <Button href="#">
+        <Button onClick={scrollTop}>
             <FontAwesomeIcon fontSize={20} color='#fff' icon={faArrowUp}/>
         </Button>
     );

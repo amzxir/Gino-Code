@@ -46,8 +46,8 @@ const Container = styled.div({
     '&> div.product':{
         padding:'0px 4rem 0px 4rem',
 
-        '@media (max-width: 550px)': {
-            padding:'0px 1rem 0px 1rem',
+        '@media (max-width: 500px)': {
+            padding:'0px 1.5rem 0px 1.5rem',
         },
 
         '&> div.row':{
