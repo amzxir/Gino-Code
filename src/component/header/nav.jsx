@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useEffect, useState } from 'react'
 import Context from '../../context/context'
+import { NavLink, useLocation } from 'react-router-dom'
 
 
 const Navs = styled.nav({
@@ -173,6 +174,58 @@ const Nav = () => {
         window.addEventListener('scroll', handelScroll)
     },[])
 
+    const loaction = useLocation()
+
+    const loactionPage = loaction.pathname
+    
+    const changeNav = () => {
+
+        if(loactionPage === '/'){
+            return(
+                
+                navItem.map((i , index)=> {
+                    return(
+                        <li key={index} onClick={()=> setActive(index)}><a style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} href={`#${i.link}`}>{i.name}</a></li>
+                    )
+                })
+                
+            )
+        } else if (loactionPage === '/single-product'){
+            return(
+
+                navItem.map((i , index)=> {
+                    return(
+                        <li key={index} onClick={()=> setActive(index)}><NavLink style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} to={`/#${i.link}`}>{i.name}</NavLink></li>
+                    )
+                }) 
+            )
+        }
+    }
+
+    const changeNavRespons = () => {
+
+        if(loactionPage === '/'){
+            return(
+                
+                navItem.map((i , index)=>{
+                    return(
+                        <li key={index} onClick={()=> setActive(index)}><a style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} href={`#${i.link}`}>{i.name}</a></li>
+                    )
+                })
+                
+            )
+        } else if (loactionPage === '/single-product'){
+            return(
+
+                navItem.map((i , index)=>{
+                    return(
+                        <li key={index} onClick={()=> setActive(index)}>< NavLink style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} to={`/#${i.link}`}>{i.name}</ NavLink></li>
+                    )
+                })
+            )
+        }
+    }
+
     return ( 
         <Navs>        
             <div className='navbar' style={{ backgroundColor: scroll }}>
@@ -183,11 +236,7 @@ const Nav = () => {
                     </div>
                     <div className="linkPage">
                         <ul>
-                            {navItem.map((i , index)=> {
-                                return(
-                                    <li key={index} onClick={()=> setActive(index)}><a style={{ color:colorText }} className={active===index?'textDanger':'textWhite'} href={`#${i.link}`}>{i.name}</a></li>
-                                )
-                            })}
+                            {changeNav()}
                         </ul>
                     </div>
                 </div>
@@ -202,11 +251,7 @@ const Nav = () => {
                     marginRight:'20px'
                     }}>
                     <ul style={{ display:open?'block' : 'none'}}>
-                        {navItem.map((i , index)=>{
-                            return(
-                                <li key={index} onClick={()=> setActive(index)}><a style={{ color:active===index?'#FF0F10':'#1D2833' }} className={open?'show':'hidden'} href={`#${i.link}`}>{i.name}</a></li>
-                            )
-                        })}
+                        {changeNavRespons()}
                     </ul>
                 </div>
             </div>
