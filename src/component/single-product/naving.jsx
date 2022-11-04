@@ -103,8 +103,8 @@ const Naving = () => {
             <div className="nav">
                 {data.map((i , index)=> {
                     return(
-                        <div style={{ position:'relative'}} key={index} onClick={()=> setActive(index)}>
-                            <a onClick={()=> setNav(i.nav)}>{i.name}</a>
+                        <div style={{ position:'relative'}} key={index} onClick={()=> setNav(i.nav)}>
+                            <a onClick={()=> setActive(index)}>{i.name}</a>
                             <span className={active === index ? 'active' : ''}></span>
                         </div>
                     )

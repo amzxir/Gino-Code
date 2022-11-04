@@ -247,15 +247,12 @@ const Content = (props) => {
                             <div className="nav">
                                 {dataNav.map((i , index)=> {
                                     return(
-                                        <div key={index} style={{ position:'relative'}} onClick={()=> setActive(index)}>
-                                            <a  className="btn" onClick={()=> setView(i.nav)}>{i.name}</a>
+                                        <div key={index} style={{ position:'relative'}} onClick={()=> setView(i.nav)}>
+                                            <a onClick={()=> setActive(index)} className="btn">{i.name}</a>
                                             <span className={active === index ? 'active' : ''}></span>
                                         </div>
                                     )
                                 })}
-                                
-                                {/* <a className="btn" onClick={()=> setView(<Naving2/>)}>پکیج نقره‌ای</a>
-                                <a className="btn" onClick={()=> setView(<Naving3/>)}>پکیج طلایی</a> */}
                             </div>
                             <div className="table">
                                 {view}
