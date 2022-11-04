@@ -96,6 +96,7 @@ const Container = styled.div({
                     overflow:'auto',
                     whiteSpace:'nowrap',
                     borderBottom:'1.5px solid #dddddd',
+                    display:'flex',
                     // borderRight:'1.5px solid #dddddd',
 
                     '& a':{
@@ -111,11 +112,11 @@ const Container = styled.div({
                         width:'50px',
                         padding:'1rem',
 
-                        '&:hover': {
-                            borderColor:'#CDAC81',
-                            backgroundColor:'#CDAC81',
-                            color:'#fff'
-                        }
+                        // '&:hover': {
+                        //     borderColor:'#CDAC81',
+                        //     backgroundColor:'#CDAC81',
+                        //     color:'#fff'
+                        // }
                     }
                 },
 
@@ -173,8 +174,13 @@ const Container = styled.div({
         height:'auto',
     },
 
+
     '& .active':{
-        color:'red',
+        borderBottom:'2px solid #FF0F10',
+        position:'absolute',
+        bottom:'0',
+        width:'100%',
+        right:'0',
     }
 
 
@@ -183,6 +189,8 @@ const Container = styled.div({
 const alertDemo = () => {
     toast.info('یپام شما برای مشاهده دمو به پشتیبانی ارسال شد');
 }
+
+
 
 
 const Content = (props) => {
@@ -208,6 +216,13 @@ const Content = (props) => {
 
     const [view , setView] = useState(<Naving1/>)
 
+    const dataNav = [
+        {name:'پکیج برنز' , nav:<Naving1/>},
+        {name:'پکیج نقره‌ای' , nav:<Naving2/>},
+        {name:'پکیج طلایی' , nav:<Naving3/>},
+    ]
+
+    const [active , setActive] = useState(false)
 
     return ( 
         <Container>
@@ -230,9 +245,17 @@ const Content = (props) => {
                             <h1>{i.name}</h1>
                             <p>{i.description}</p>
                             <div className="nav">
-                                <a className="btn" onClick={()=> setView(<Naving1/>)}>پکیج برنز</a>
-                                <a className="btn" onClick={()=> setView(<Naving2/>)}>پکیج نقره‌ای</a>
-                                <a className="btn" onClick={()=> setView(<Naving3/>)}>پکیج طلایی</a>
+                                {dataNav.map((i , index)=> {
+                                    return(
+                                        <div key={index} style={{ position:'relative'}} onClick={()=> setActive(index)}>
+                                            <a  className="btn" onClick={()=> setView(i.nav)}>{i.name}</a>
+                                            <span className={active === index ? 'active' : ''}></span>
+                                        </div>
+                                    )
+                                })}
+                                
+                                {/* <a className="btn" onClick={()=> setView(<Naving2/>)}>پکیج نقره‌ای</a>
+                                <a className="btn" onClick={()=> setView(<Naving3/>)}>پکیج طلایی</a> */}
                             </div>
                             <div className="table">
                                 {view}

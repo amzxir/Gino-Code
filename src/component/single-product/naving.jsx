@@ -15,7 +15,7 @@ const Container = styled.div({
 
     '&> div.nav':{
         borderBottom:'1px solid #e2e2e2',
-
+        display:'flex',
         '& a':{
             display:'inline-block',
             margin:'10px',
@@ -75,6 +75,14 @@ const Container = styled.div({
             boxShadow:'0 .125rem .25rem #dddddd',
 
         }
+    },
+
+    '& .active':{
+        borderBottom:'2px solid #FF0F10',
+        position:'absolute',
+        bottom:'0',
+        width:'100%',
+        right:'0',
     }
 })
 
@@ -82,12 +90,26 @@ const Naving = () => {
 
     const [nav , setNav] = useState(<Tab1/>)
 
+    const data = [
+        {name:'توضحیات' , nav:<Tab1/>},
+        {name:'مشخصات' , nav:<Tab2/>},
+        {name:'نظرات' , nav:<Tab3/>},
+    ]
+
+    const [active , setActive] = useState(false)
+
     return ( 
         <Container>
             <div className="nav">
-                <a onClick={()=> setNav(<Tab1/>)}>توضحیات</a>
-                <a onClick={()=> setNav(<Tab2/>)}>مشخصات</a>
-                <a onClick={()=> setNav(<Tab3/>)}>نظرات</a>
+                {data.map((i , index)=> {
+                    return(
+                        <div style={{ position:'relative'}} key={index} onClick={()=> setActive(index)}>
+                            <a onClick={()=> setNav(i.nav)}>{i.name}</a>
+                            <span className={active === index ? 'active' : ''}></span>
+                        </div>
+                    )
+                })}
+                
             </div>
             <div className="tab">
                 {nav}
