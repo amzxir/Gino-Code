@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 
 const Container = styled.div({
-    '@media (min-width: 992px)': {
-        flex:'0 0 auto',
-        width:'60%',
-    },
+    // '@media (min-width: 992px)': {
+    //     flex:'0 0 auto',
+    //     width:'60%',
+    // },
 
     marginBottom:'1.5rem',
     width:'100%',
-    boxShadow:'0 .125rem .25rem #dddddd',
+    boxShadow:'0 .25rem .25rem .25rem #dddddd',
+    borderRadius:'10px',
     padding:'1.5rem',
 
     '&> div.nav':{

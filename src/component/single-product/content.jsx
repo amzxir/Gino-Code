@@ -17,20 +17,21 @@ const Container = styled.div({
             justifyContent:'space-between',
             flexWrap:'wrap',
             flexDirection:'row',
+            alignItems:'start',
         },
 
 
         '&> div.col7':{
-            padding:'15px',
+            padding:'0px 15px 0px 15px',
             boxSizing:'border-box',
             marginBottom:'1rem',
-            backgroundColor:'#F7F7F7',
-            padding:'1.5rem',
-            height:'100%',
+            // backgroundColor:'#F7F7F7',
+            // padding:'1.5rem',
+            // height:'100%',
 
             '@media (min-width: 992px)': {
                 flex:'0 0 auto',
-                width:'48%',
+                width:'60%',
             },
     
         },
@@ -44,7 +45,7 @@ const Container = styled.div({
 
             '@media (min-width: 992px)': {
                 flex:'0 0 auto',
-                width:'48%',
+                width:'40%',
             },
 
             '&> div.content':{
@@ -54,35 +55,6 @@ const Container = styled.div({
                     color:'#383838',
                 },
 
-                '&> div.button':{
-                    margin:'1rem 0rem 1rem 0rem',
-
-                    '@media (max-width: 375px)': {
-                        display:'flex',
-                    },
-
-                    '& button':{
-                        backgroundColor:'#FF0F10',
-                        borderColor:'#FF0F10',
-                        color:'#fff',
-                        fontSize:'14px',
-                        fontWeight:'bold',
-                        margin:'10px',
-                        width:'100px',
-
-                    },
-
-                    '& a':{
-                        backgroundColor:'#CDAC81',
-                        borderColor:'#CDAC81',
-                        color:'#fff',
-                        fontSize:'14px',
-                        fontWeight:'bold',
-                        margin:'10px',
-                        width:'100px',
-
-                    }
-                },
 
                 '&> p':{
                     fontSize:'15px',
@@ -92,86 +64,139 @@ const Container = styled.div({
                     marginBlockEnd:'2rem',
                 },
 
-                '&> div.nav':{
-                    overflow:'auto',
-                    whiteSpace:'nowrap',
-                    borderBottom:'1.5px solid #dddddd',
-                    display:'flex',
-                    // borderRight:'1.5px solid #dddddd',
 
-                    '& a':{
-                        // backgroundColor:'#fff',
-                        // borderColor:'#dddddd',
-                        // borderWidth:'1.5px',
-                        // borderRight:'none',
-                        // borderBottom:'none',
-                        color:'#383838',
-                        fontSize:'12px',
-                        fontWeight:'bold',
-                        borderRadius:'0px !important',
-                        width:'50px',
-                        padding:'1rem',
-
-                        // '&:hover': {
-                        //     borderColor:'#CDAC81',
-                        //     backgroundColor:'#CDAC81',
-                        //     color:'#fff'
-                        // }
-                    }
-                },
-
-                '&> div.table':{
-                    marginTop:'2rem',
-                    overflow:'auto',
-                    paddingBottom:'.5rem',
-                    whiteSpace:'nowrap',
-                    '&> table':{
-
-                        fontSize:'13px',
-                        fontWeight:'bold',
-                        color:'#41464b',
-                        
-                        '&> thead':{
-                            textAlign:'center',
-
-                            '&> tr':{
-
-
-                                '&> td':{
-
-                                }
-                            }
-                        },
-
-                        '&> tbody':{
-
-                            '&> tr':{
-
-
-                                '&> td':{
-                                    textAlign:'center',
-                                }
-                            }
-                        }
-                    }
-                }
 
             }
 
 
        
+        },
+
+        '&> div.col12':{
+            padding:'1.5rem 1.5rem  0rem  1.5rem',
+            boxSizing:'border-box',
+            margin:'1rem 0 1rem 0 ',
+            height:'100%',
+            boxShadow:'0 .25rem .25rem .25rem #dddddd',
+            borderRadius:'10px',
+
+            '@media (min-width: 992px)': {
+                flex:'0 0 auto',
+                width:'100%',
+            },
+
+            '&> div.nav':{
+                overflow:'auto',
+                whiteSpace:'nowrap',
+                borderBottom:'1px solid #e2e2e2',
+                display:'flex',
+                // borderRight:'1.5px solid #dddddd',
+
+                '& a':{
+                    // backgroundColor:'#fff',
+                    // borderColor:'#dddddd',
+                    // borderWidth:'1.5px',
+                    // borderRight:'none',
+                    // borderBottom:'none',
+                    color:'#383838',
+                    fontSize:'12px',
+                    fontWeight:'bold',
+                    borderRadius:'0px !important',
+                    width:'50px',
+                    padding:'1rem',
+
+                    // '&:hover': {
+                    //     borderColor:'#CDAC81',
+                    //     backgroundColor:'#CDAC81',
+                    //     color:'#fff'
+                    // }
+                }
+            },
+
+            '&> div.table':{
+                marginTop:'2rem',
+                overflow:'auto',
+                paddingBottom:'.5rem',
+                whiteSpace:'nowrap',
+                '&> table':{
+
+                    fontSize:'13px',
+                    fontWeight:'bold',
+                    color:'#41464b',
+                    
+                    '&> thead':{
+                        textAlign:'center',
+
+                        '&> tr':{
+
+
+                            '&> td':{
+
+                            }
+                        }
+                    },
+
+                    '&> tbody':{
+
+                        '&> tr':{
+
+
+                            '&> td':{
+                                textAlign:'center',
+                            }
+                        }
+                    }
+                }
+            },
+
+
+            '&> div.button':{
+                margin:'1rem 0rem 1rem 0rem',
+
+                '@media (max-width: 375px)': {
+                    display:'flex',
+                },
+
+                '& button':{
+                    backgroundColor:'#FF0F10',
+                    borderColor:'#FF0F10',
+                    color:'#fff',
+                    fontSize:'14px',
+                    fontWeight:'bold',
+                    margin:'10px',
+                    width:'100px',
+
+                },
+
+                '& a':{
+                    backgroundColor:'#CDAC81',
+                    borderColor:'#CDAC81',
+                    color:'#fff',
+                    fontSize:'14px',
+                    fontWeight:'bold',
+                    margin:'10px',
+                    width:'100px',
+
+                }
+            },
         }
     },
 
     '& .imgFluid':{
         maxWidth:'100%',
-        height:'auto',
+        height:'auto'
     },
 
     '& .imgDots':{
-        maxWidth:'150%',
-        position:'absolute',
+        maxWidth:'100%',
         height:'auto',
+    },
+
+    '& .positionImg':{
+        position:'absolute',
+        right:'0',
+        left:'0',
+        width:'100%',
     },
 
 
@@ -199,7 +224,7 @@ const Content = (props) => {
 
         customPaging: function(i) { 
           return (  
-            <a>
+            <a className="positionImg">
                 <img className="imgDots" src={props.imgSlider[i].img} />
             </a>
           )
@@ -232,7 +257,7 @@ const Content = (props) => {
                         {props.imgSlider.map((i , index)=> {
                             return(
                                 <div key={index}>
-                                    <img src={i.img} className='imgFluid' alt="" />
+                                    <img src={i.img} style={{ borderRadius:'10px' }} className='imgFluid' alt="" />
                                 </div>
                             )
                         })}
@@ -244,26 +269,28 @@ const Content = (props) => {
                         <div className="content" key={index}>
                             <h1>{i.name}</h1>
                             <p>{i.description}</p>
-                            <div className="nav">
-                                {dataNav.map((i , index)=> {
-                                    return(
-                                        <div key={index} style={{ position:'relative'}} onClick={()=> setView(i.nav)}>
-                                            <a onClick={()=> setActive(index)} className="btn">{i.name}</a>
-                                            <span className={active === index ? 'active' : ''}></span>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            <div className="table">
-                                {view}
-                            </div>
-                            <div className="button">
-                                <button className="btn">خرید</button>
-                                <a onClick={alertDemo} className="btn">مشاوره و دمو</a>
-                            </div>
                         </div>
                         )
                     })}
+                </div>
+                <div className="col12">
+                <div className="nav">
+                    {dataNav.map((i , index)=> {
+                        return(
+                            <div key={index} style={{ position:'relative'}} onClick={()=> setView(i.nav)}>
+                                <a onClick={()=> setActive(index)} className="btn">{i.name}</a>
+                                <span className={active === index ? 'active' : ''}></span>
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className="table">
+                    {view}
+                </div>
+                <div className="button">
+                    <button className="btn">خرید</button>
+                    <a onClick={alertDemo} className="btn">مشاوره و دمو</a>
+                </div>
                 </div>
             </div>
         </Container>

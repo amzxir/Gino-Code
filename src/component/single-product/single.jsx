@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Content from "./content";
 import FormProduct from "./form";
-import images1 from './images/img1.jpeg'
-import images2 from './images/img2.jpeg'
-import images3 from './images/img3.jpeg'
+import images1 from './images/img1.png'
+import images2 from './images/img2.png'
+import images3 from './images/img3.png'
 import Naving from "./naving";
 import { useEffect } from "react";
 
@@ -113,7 +113,7 @@ const SingleProduct = () => {
                 />
                 <div className="row">
                     <Naving/>
-                    <FormProduct/>
+                    {/* <FormProduct/> */}
                 </div>
             </div>
         </Container>
