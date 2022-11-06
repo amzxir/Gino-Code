@@ -28,6 +28,9 @@ function App() {
 
   const [active , setActive] = useState()
 
+  const [modal , setModal] = useState(false)
+
+
   useEffect(()=> {
     window.scroll({top:0 , left:0 , behavior: 'smooth'})
   })
@@ -41,6 +44,8 @@ function App() {
         navItem,
         active,
         setActive,
+        modal,
+        setModal,
       }}>
       {!isLoading ? <Loading/> : 
         <Garden>

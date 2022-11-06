@@ -3,7 +3,12 @@ import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { faCheckCircle  } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from "react";
+import Context from "../../context/context";
+import Modal from "../modal/modal";
+import Demo from "./form/form-demo";
+import Buy from "./form/form-buy";
 
 
 
@@ -215,9 +220,6 @@ const alertDemo = () => {
     toast.info('یپام شما برای مشاهده دمو به پشتیبانی ارسال شد');
 }
 
-
-
-
 const Content = (props) => {
 
     const settings = {
@@ -249,6 +251,9 @@ const Content = (props) => {
 
     const [active , setActive] = useState(false)
 
+    const {modal , setModal} = useContext(Context)
+
+    
     return ( 
         <Container>
             <div className="row">
@@ -288,10 +293,21 @@ const Content = (props) => {
                     {view}
                 </div>
                 <div className="button">
-                    <button className="btn">خرید</button>
-                    <a onClick={alertDemo} className="btn">مشاوره و دمو</a>
+                    <button className="btn" onClick={()=> setModal('buy')}>خرید</button>
+                    <a onClick={()=> setModal('demo')} className="btn">مشاوره و دمو</a>
                 </div>
                 </div>
+            </div>
+            <div>
+               
+                <Modal show={modal==='buy'}>
+                    <Buy/>
+                </Modal>
+
+                <Modal show={modal==='demo'}>                   
+                    <Demo/>
+                </Modal>
+            
             </div>
         </Container>
     );
