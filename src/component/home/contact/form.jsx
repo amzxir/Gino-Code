@@ -74,19 +74,19 @@ const Form = () => {
         
         if (!v.name) {
 
-            toast.error('فیلد نام و نام خانوادگی خالی است !');
+            toast.error('فیلد نام و نام خانوادگی اجباری است !');
 
         } else if (!v.email) {
 
-            toast.error('فیلد ایمیل خالی است !');
+            toast.error('فیلد ایمیل اجباری است !');
 
         } else if (!v.subject) {
 
-            toast.error('فیلد موضوع خالی است !');
+            toast.error('فیلد موضوع اجباری است !');
 
         } else if (!v.message) {
 
-            toast.error('فیلد پیام خالی است !');
+            toast.error('فیلد پیام اجباری است !');
 
         } else {
             toast.success('پیام با موفقیت ارسال شد');

@@ -33,7 +33,7 @@ const Demo = () => {
         
         if(!v.mobile){
 
-            toast.error('فیلد شماره موبایل خالی است !');
+            toast.error('فیلد شماره موبایل اجباری است !');
 
         } else if  (v.mobile.length !== 11) {
 
@@ -41,7 +41,7 @@ const Demo = () => {
 
         } else if (!v.number) {
 
-            toast.error('فیلد تعداد سازمان خالی است !');
+            toast.error('فیلد تعداد سازمان اجباری است !');
 
         } else {
             

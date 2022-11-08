@@ -46,11 +46,11 @@ const Form = () => {
 
         if (!v.name) {
 
-            toast.error('فیلد نام و نام خانوادگی خالی است !');
+            toast.error('فیلد نام و نام خانوادگی اجباری است !');
 
         } else if (!v.mobile) {
 
-            toast.error('فیلد موبایل خالی است !');
+            toast.error('فیلد موبایل اجباری است !');
 
         } else if(v.mobile.length !== 11) {
 
@@ -58,7 +58,7 @@ const Form = () => {
 
         }else if (!v.message) {
 
-            toast.error('فیلد پیام خالی است !');
+            toast.error('فیلد پیام اجباری است !');
 
         } else {
 

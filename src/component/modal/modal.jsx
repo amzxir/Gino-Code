@@ -3,10 +3,10 @@ import Context from "../../context/context";
 
 const Modal = (props) => {
 
-    const {modal , setModal} = useContext(Context)
+    const {setModal} = useContext(Context)
 
     return ( 
-        <div className={!props.show?'dNone':'openModal dBlock'} onClick={()=> setModal(true)}>
+        <div className={!props.show?'dNone':'openModal dBlock'}>
             {
             props.children
             }
