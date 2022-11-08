@@ -1,4 +1,3 @@
-import { faImages } from "@fortawesome/free-regular-svg-icons";
 import Slider from "react-slick";
 import styled from "styled-components";
 
@@ -9,7 +8,9 @@ const Container = styled.div({
     '& .imgFluid':{
         maxWidth:'100%',
         height:'auto',
+        width:'100%',
         borderRadius:'15px',
+        maxHeight:'80vh',
     }
 
 })

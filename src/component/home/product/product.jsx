@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import SliderProduct from "./slider";
-import images1 from './images/img1.jpeg'
-import images2 from './images/img2.jpeg'
-import images3 from './images/img3.jpeg'
+import images1 from './images/img1.png'
+import images2 from './images/img2.png'
+import images3 from './images/img3.png'
 import {NavLink} from "react-router-dom";
 import { useContext } from "react";
 import Context from "../../../context/context";

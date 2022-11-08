@@ -13,8 +13,8 @@ const Teams = styled.div({
     padding:'0px 8rem 0px 8rem',
     marginBottom:'4rem',
 
-    '@media (max-width: 500px)': {
-        padding:'0px 1.5rem 0px 1.5rem',
+    '@media (max-width: 650px)': {
+        padding:'0px 2rem 0px 2rem',
     },
 
     '&> div.content':{
