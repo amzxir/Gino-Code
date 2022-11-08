@@ -26,6 +26,10 @@ const Contacts = styled.div({
         '& p':{
             lineHeight:'2',
             color:'#5A5A5A',
+
+            '@media (max-width: 500px)': {
+                fontSize:'15px',
+            },
         }
     },
 

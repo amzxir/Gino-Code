@@ -67,6 +67,10 @@ const Container = styled.div({
                     textAlign:'justify',
                     marginBlockStart:'2rem',
                     marginBlockEnd:'2rem',
+
+                    '@media (max-width: 500px)': {
+                        fontSize:'15px',
+                    },
                 },
 
 

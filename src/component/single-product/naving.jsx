@@ -38,6 +38,10 @@ const Container = styled.div({
             lineHeight:'2',
             color:'#232933',
             textAlign:'justify',
+
+            '@media (max-width: 500px)': {
+                fontSize:'14px',
+            },
         },
 
         '&> div.row':{
@@ -74,6 +78,10 @@ const Container = styled.div({
             padding:'1rem',
             borderRadius:'10px',
             boxShadow:'0 .125rem .25rem #dddddd',
+
+            '@media (max-width: 500px)': {
+                fontSize:'14px',
+            },
 
         }
     },

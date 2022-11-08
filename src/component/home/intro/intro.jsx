@@ -49,7 +49,12 @@ const Container = styled.div({
                 '& p':{
                     color:'#fff',
                     marginBottom:'3rem',
-                    fontWeight:'500'
+                    fontWeight:'500',
+                    lineHeight:'2.17',
+
+                    '@media (max-width: 500px)': {
+                        fontSize:'15px',
+                    },
                 },
     
                 '& a.btn':{
