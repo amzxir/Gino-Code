@@ -99,6 +99,7 @@ const Naving = () => {
 
     const [active , setActive] = useState(false)
 
+
     return ( 
         <Container>
             <div className="nav">
@@ -106,7 +107,7 @@ const Naving = () => {
                     return(
                         <div style={{ position:'relative'}} key={index} onClick={()=> setNav(i.nav)}>
                             <a onClick={()=> setActive(index)}>{i.name}</a>
-                            <span className={active === index ? 'active' : ''}></span>
+                            <span  className={active === index ? 'active' : ''}></span>
                         </div>
                     )
                 })}
