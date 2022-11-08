@@ -63,7 +63,7 @@ const Buy = () => {
 
     return ( 
         <div className="modal">
-            <div className="modalTitle">فرم ثبت سفارش <FontAwesomeIcon onClick={()=> setModal(!modal)} icon={faX}/></div>
+            <div className="modalTitle">فرم ثبت سفارش <FontAwesomeIcon className="pointer" onClick={()=> setModal(!modal)} icon={faX}/></div>
             <div className="modalBody">
                 <Forms>
                     <div className="formGroup">

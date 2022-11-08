@@ -53,7 +53,7 @@ const Demo = () => {
 
     return ( 
         <div className="modal">
-            <div className="modalTitle">فرم <FontAwesomeIcon onClick={()=> setModal(!modal)} icon={faX}/></div>
+            <div className="modalTitle">فرم <FontAwesomeIcon className="pointer" onClick={()=> setModal(!modal)} icon={faX}/></div>
             <div className="modalBody">
                 <FormProduct
                 input={input}
