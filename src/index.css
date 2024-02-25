@@ -81,10 +81,10 @@ a{
 
 .bgImages{
   background: 
-  url(./component/home/intro/images/bg-round.png),
-  url(./component/home/intro/images/bg-round-2.png),
-  url(./component/home/intro/images/bg-square.png),
-  url(./component/home/intro/images/bg-line.png)
+  url(./components/home/intro/images/bg-round.png),
+  url(./components/home/intro/images/bg-round-2.png),
+  url(./components/home/intro/images/bg-square.png),
+  url(./components/home/intro/images/bg-line.png)
   ;
   background-repeat: no-repeat;
   background-position: 0px 40%,
@@ -183,10 +183,10 @@ a{
 }
 
 .imagesFooter{
-  background: url(./component/footer/images/bg-round.png),
-  url(./component/footer/images/bg-round-2.png),
-  url(./component/footer/images/bg-square.png),
-  url(./component/footer/images/bg-line.png)
+  background: url(./components/footer/images/bg-round.png),
+  url(./components/footer/images/bg-round-2.png),
+  url(./components/footer/images/bg-square.png),
+  url(./components/footer/images/bg-line.png)
   ;
   background-position: 
   0px 112px,

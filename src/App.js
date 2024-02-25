@@ -1,12 +1,12 @@
 import { useEffect , useState } from "react";
 import styled from "styled-components";
-import Footer from "./component/footer/footer";
-import Nav from "./component/header/nav";
-import Home from "./component/home/home";
-import Loading from "./component/loading/loading";
+import Footer from "./components/footer/footer";
+import Nav from "./components/header/nav";
+import Home from "./components/home/home";
+import Loading from "./components/loading/loading";
 import Context from "./context/context";
 import 'react-toastify/dist/ReactToastify.css';
-import SingleProduct from "./component/single-product/single";
+import SingleProduct from "./components/single-product/single";
 import {Route , Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 
